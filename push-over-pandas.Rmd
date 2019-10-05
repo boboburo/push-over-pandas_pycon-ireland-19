@@ -121,4 +121,7 @@ Error Message
 - address some of these points https://docs.dask.org/en/latest/best-practices.html
 
 
-## 
+## modin
+
+- expalin what, where, ray
+- ray does not work on windows
