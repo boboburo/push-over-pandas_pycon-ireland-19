@@ -1,0 +1,8 @@
+brian_laptop:
+  data:
+    data_path: /Users/bcarte18/Documents/Learning/personal_git/push-over-pandas_pycon-ireland-19/data/
+    nyc_taxi_2015_hdfs: nyc_taxi2015.hdf5
+    nyc_taxi_all_hdfs: nyc_taxi_all.hdf5
+    iris_csv: iris.csv
+mac_mini:
+  data_path:

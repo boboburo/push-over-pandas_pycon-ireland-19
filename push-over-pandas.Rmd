@@ -11,16 +11,26 @@ output:
     center: true
 ---
 
-## In the morning
+## Introduction
 
-## Getting up
 
-- Turn off alarm
-- Get out of bed
+<aside class="notes"> How Data Science works: My background is 
 
-<aside class="notes">
-Test notes 
-</aside>
+too large Data
+want to interact with data - Literate Programming Paradaigm
+
+meagbyte scale data as we do for terrabyte data landscape. 
+Bring something in here about distributed data. 
+
+
+## Current Data Science Landscape (change name) 
+
+These tools are very well establish. Need to see this picture. 
+
+
+
+
+<aside class="notes">Test notes </aside>
 
 ## Breakfast
 
