@@ -1,15 +1,28 @@
 ---
-title: "Habits"
-author: John Doe
-date: March 22, 2005
+title: "Push Over Pandas"
+subtitle: "PyCon Ireland"
+author: Brian Carter
+date: October, 13, 2019
 output:
   revealjs::revealjs_presentation:
     self_contained: false
     reveal_plugins: ["notes"]
-    theme: sky
-    highlight: pygments
+    theme: moon
+    highlight: default
     center: true
+    progress: true
 ---
+
+## Change this 
+
+```{r setup, include = F}
+library(reticulate)
+use_python("/Users/bcarte18/anaconda3/envs/po_pandas/bin/python")
+```
+
+<style>
+div.lightsalmon pre { background-color:lightpink; }
+</style>
 
 ## Introduction
 
@@ -22,6 +35,9 @@ want to interact with data - Literate Programming Paradaigm
 meagbyte scale data as we do for terrabyte data landscape. 
 Bring something in here about distributed data. 
 
+- something about genomics 
+
+</aside>
 
 ## Current Data Science Landscape (change name) 
 
@@ -32,19 +48,77 @@ These tools are very well establish. Need to see this picture.
 
 <aside class="notes">Test notes </aside>
 
-## Breakfast
 
-- Eat eggs
-- Drink coffee
+## pandas 
 
-## In the evening
+![pandas fail](presentation_images/upside_down_panda.jpg){#id .class width=50% height=50%}
 
-## Dinner
+```
+import pandas as pd
+pd.read_read("some_large_csv_file.csv")
+```
+<div class = "lightsalmon">
+```
+Error Message
+```
+</div>
 
-- Eat spaghetti
-- Drink wine
 
-## Going to sleep
+<aside class="notes">
 
-- Get in bed
-- Count sheep
+- Start my journey, DS, ML 10 years ago, excited, learnt about pandas, built some modes with scikit learn - 
+- One day I started to do a project with some text data, got everythign together and loaded it into pandas
+- Of course I used I did silly things, taking a sparse matrix and making it dense. 
+- Bigger & better table
+
+</aside>
+
+## what you will learn here 
+
+## data.table
+
+![data table](presentation_images/data_table.jpg){#id .class width=50% height=50%}
+
+- started in 2006 by Matt Dowle (currently at [h2O](h20.ai))
+- focus on time series originally, can be used in genomics 
+- h20 ported this to python [datatable](https://github.com/h2oai/datatable)
+- 100GB on a single node machine 
+
+
+<aside class = "notes">
+
+- first foray into something different was data.table when it was created for R.
+- explain what data.table is 
+- data.table is now available for python 
+- I do like it 
+- but I had to learn a whole new API 
+- R package originally 
+- syntax like matrix, rows in i, columns j, expression on columns can be done by groups. 
+- short syntax 
+- SQL Tables have no inherent order. If you want some form of ordering that you can rely upon, it's up to you to provide enough deterministic expression(s) to any ORDER BY clause such that each row is uniquely identified and ordered.
+-
+
+- Column-oriented data storage.
+
+- Native-C implementation for all datatypes, including strings. Packages such as pandas and numpy already do that for numeric columns, but not for strings.
+
+- Support for date-time and categorical types. Object type is also supported, but promotion into object discouraged.
+
+- All types should support null values, with as little overhead as possible.
+
+- Data should be stored on disk in the same format as in memory. This will allow us to memory-map data on disk and work on out-of-memory datasets transparently.
+
+</aside>
+
+
+
+## dask
+
+- comes out of continium - these are the main guys behind conda
+
+- dask has a low task scheduler which executes python functions on a cluster. 
+
+- address some of these points https://docs.dask.org/en/latest/best-practices.html
+
+
+## 

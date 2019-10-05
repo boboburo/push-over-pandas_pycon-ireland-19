@@ -3,9 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content="John Doe" />
-  <meta name="dcterms.date" content="2005-03-22" />
-  <title>Habits</title>
+  <meta name="author" content="Brian Carter" />
+  <title>Push Over Pandas</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -13,8 +12,13 @@
 
 
 
-<link rel="stylesheet" href="push-over-pandas_files/reveal.js-3.3.0.1/css/theme/sky.css" id="theme">
+<link rel="stylesheet" href="push-over-pandas_files/reveal.js-3.3.0.1/css/theme/moon.css" id="theme">
 
+<style type="text/css">
+.reveal section img {
+  background: rgba(255, 255, 255, 0.85);
+}
+</style>
 
   <!-- some tweaks to reveal css -->
   <style type="text/css">
@@ -450,29 +454,74 @@ document.getElementsByTagName('head')[0].appendChild(style);
     <div class="slides">
 
 <section>
-    <h1 class="title">Habits</h1>
-    <h2 class="author">John Doe</h2>
-    <h3 class="date">March 22, 2005</h3>
+    <h1 class="title">Push Over Pandas</h1>
+  <h1 class="subtitle">PyCon Ireland</h1>
+    <h2 class="author">Brian Carter</h2>
+    <h3 class="date">October, 13, 2019</h3>
 </section>
 
-<section id="in-the-morning" class="slide level2">
-<h2>In the morning</h2>
+<section id="change-this" class="slide level2">
+<h2>Change this</h2>
+<style>
+div.lightsalmon pre { background-color:lightpink; }
+</style>
 </section>
-<section id="getting-up" class="slide level2">
-<h2>Getting up</h2>
+<section id="introduction" class="slide level2">
+<h2>Introduction</h2>
+<aside class="notes">
+<p>How Data Science works: My background is</p>
+<p>too large Data want to interact with data - Literate Programming Paradaigm</p>
+<p>meagbyte scale data as we do for terrabyte data landscape. Bring something in here about distributed data.</p>
 <ul>
-<li>Turn off alarm</li>
-<li>Get out of bed</li>
+<li>something about genomics</li>
 </ul>
+</aside>
+</section>
+<section id="current-data-science-landscape-change-name" class="slide level2">
+<h2>Current Data Science Landscape (change name)</h2>
+<p>These tools are very well establish. Need to see this picture.</p>
 <aside class="notes">
 Test notes
 </aside>
 </section>
-<section id="breakfast" class="slide level2">
-<h2>Breakfast</h2>
+<section id="pandas" class="slide level2">
+<h2>pandas</h2>
+<p><img data-src="presentation_images/upside_down_panda.jpg" id="id" class="class" style="width:50.0%;height:50.0%" alt="pandas fail" /></p>
+<pre><code>import pandas as pd
+pd.read_read(&quot;some_large_csv_file.csv&quot;)</code></pre>
+<div class="lightsalmon">
+<pre><code>Error Message</code></pre>
+</div>
+<aside class="notes">
 <ul>
-<li>Eat eggs</li>
-<li>Drink coffee</li>
+<li>Start my journey, DS, ML 10 years ago, excited, learnt about pandas, built some modes with scikit learn -</li>
+<li>One day I started to do a project with some text data, got everythign together and loaded it into pandas</li>
+<li>Of course I used I did silly things, taking a sparse matrix and making it dense.</li>
+<li>Bigger &amp; better table</li>
+</ul>
+</aside>
+</section>
+<section id="what-you-will-learn-here" class="slide level2">
+<h2>what you will learn here</h2>
+</section>
+<section id="data.table" class="slide level2">
+<h2>data.table</h2>
+<p><img data-src="presentation_images/data_table.jpg" id="id" class="class" style="width:50.0%;height:50.0%" alt="data table" /></p>
+<ul>
+<li>started in 2006 by Matt Dowle (currently at <a href="h20.ai">h2O</a>)</li>
+<li>focus on time series originally, can be used in genomics</li>
+</ul>
+<aside class = "notes">
+<ul>
+<li><p>first foray into something different was data.table when it was created for R.</p></li>
+<li><p>explain what data.table is</p></li>
+<li><p>data.table is now available for python</p></li>
+<li><p>I do like it</p></li>
+<li><p>but I had to learn a whole new API</p></li>
+<li><p>R package originally</p></li>
+<li><p>syntax like matrix, rows in i, columns j, expression on columns can be done by groups.</p></li>
+<li><p>Eat eggs</p></li>
+<li><p>Drink coffee</p></li>
 </ul>
 </section>
 <section id="in-the-evening" class="slide level2">
