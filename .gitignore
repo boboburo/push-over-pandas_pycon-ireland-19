@@ -3,3 +3,4 @@
 **/config.yaml_files
 .Rproj.user
 **/.ipynb_checkpoints
+.Rhistory

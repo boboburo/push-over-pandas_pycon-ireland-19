@@ -62,6 +62,7 @@ pip install modin
 
 ## ARROW 
 
+pyarrow
 
 ## Data Soucres
 

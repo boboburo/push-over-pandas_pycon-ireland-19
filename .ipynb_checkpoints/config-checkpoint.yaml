@@ -1,0 +1,14 @@
+brian_laptop:
+  data_path: /Users/bcarte18/Documents/Learning/personal_git/push-over-pandas_pycon-ireland-19/data/
+data:
+  nyc_taxi_2015_hdfs: nyc_taxi2015.hdf5
+  nyc_taxi_all_hdfs: nyc_taxi_all.hdf5
+  dc_taxi_2017: taxi_final.csv
+  dc_taxi_2017_quad: taxi_final_quadruple.csv
+  iris_csv: iris.csv
+  kaggle_nyc: ny_city_kaggle_fare_prediction_train.csv
+  kaggle_nyc_testing: ny_city_kaggle_fare_prediction_train_sample_10000.csv
+  metadata: meta_data.json
+contants:
+  mb_div: 1000000
+  gb_div: 1000000000
