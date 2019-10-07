@@ -125,3 +125,25 @@ Error Message
 
 - expalin what, where, ray
 - ray does not work on windows
+
+## vaex (v)
+ 
+ - hdf, arrow
+ - ml (sklearn, annoy, xgboost/lightgbm, catboost) + automatic pipelines
+ - 
+
+
+<aside = "notes">
+- pronounced like VAT
+- Out of Core Dataframes for Python 
+- Maarten Breddel vaex.io
+- Has some inbuilt 
+
+Pandas is the mother of all, then you have dask.dataframe, Modin, SFrame, cudf, voex, 
+
+## Whats to do 
+
+- Lots
+- SFrame, Spark, cudaDF(Rapids)
+</aside>
+
