@@ -64,6 +64,14 @@ pip install modin
 
 pyarrow
 
+```
+conda install -c conda-forge pyarrow
+conda install -c conda-forge fastparquet 
+
+The current version of pyarrow=0.13 does not work with Dask 2.5.0
+```
+
+
 ## Data Soucres
 
 [New York Taxi Trips(2015) - 146 million rows - 23GB](https://drive.google.com/file/d/0B8gjQokMGa4nTXc0Z3QyYjZBMWc/view)

@@ -1,0 +1,9 @@
+﻿,pandas,pydatatable,dask,modin,vaex
+in development,,,,,
+syntax,baseline,not as straightforward as R version,,,
+interopertablity,,,,,
+ml support,,,,,
+scaling ,,,,,
+other,,,,,
+speed bench,,,,,
+interactivity,,,,,

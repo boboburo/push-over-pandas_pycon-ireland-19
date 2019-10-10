@@ -75,6 +75,15 @@ Error Message
 
 ## what you will learn here 
 
+## Apache Arrow & Parquet
+
+Image required 
+
+he Hadoop ecosystem has standardized on columnar formats—Apache Parquet for on-disk storage and Apache Arrow for in-memory. With this trend, deep integration with columnar formats is a key differentiator for big data technologies. Vertical integration from storage to execution greatly improves the latency of accessing data by pushing projections and filters to the storage layer, reducing time spent in IO reading from disk, as well as CPU time spent decompressing and decoding. Standards like Arrow and Parquet make this integration even more valuable as data can now cross system boundaries without incurring costly translation. Cross-system programming using languages such as Spark, Python, or SQL can becomes as fast as native internal performance.
+
+In this talk we’ll explain how Parquet is improving at the storage level, with metadata and statistics that will facilitate more optimizations in query engines in the future. We’ll detail how the new vectorized reader from Parquet to Arrow enables much faster reads by removing abstractions as well as several future improvements. We will also discuss how standard Arrow-based APIs pave the way to breaking the silos of big data. One example is Arrow-based universal function libraries that can be written in any language (Java, Scala, C++, Python, R, ...) and will be usable in any big data system (Spark, Impala, Presto, Drill). Another is a standard data access API with projection and predicate push downs, which will greatly simplify data access optimizations across the board.
+
+
 ## data.table
 
 ![data table](presentation_images/data_table.jpg){#id .class width=50% height=50%}
@@ -130,7 +139,10 @@ Error Message
  
  - hdf, arrow
  - ml (sklearn, annoy, xgboost/lightgbm, catboost) + automatic pipelines
- - 
+ - effiecting with memory, due to expression system
+ - column based storage + memory mapping 
+ - don't need a cluster to run vaex
+ - 10-1000x string processing wrt to Process 
 
 
 <aside = "notes">
@@ -139,11 +151,20 @@ Error Message
 - Maarten Breddel vaex.io
 - Has some inbuilt 
 
-Pandas is the mother of all, then you have dask.dataframe, Modin, SFrame, cudf, voex, 
+Pandas is the mother of all, then you have dask.dataframe, Modin, SFrame, 
+cudf, voex,
+
+- virtual columns with expressions do something nice 
+
+</aside>
 
 ## Whats to do 
 
 - Lots
 - SFrame, Spark, cudaDF(Rapids)
 </aside>
+
+## BenchMark Table 
+
+
 
