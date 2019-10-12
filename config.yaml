@@ -17,6 +17,7 @@ data:
   nyc_yellow_trip_parquet_gzip: yellow_tripdata_2010-06_gzip.parquet
   nyc_yellow_trip_hdf: yellow_tripdata_2010-06.hdf
   nyc_yellow_trip_hdf5: yellow_tripdata_2010-06.hdf5
-contants:
+  nyc_yellow_trip_hdf5_v2: yellow_tripdata_2010-06_v2.hdf5
+constant:
   mb_div: 1000000
   gb_div: 1000000000

@@ -1,10 +1,36 @@
+# System Description
+
+The benchmarks described in this repo are obtained on a MacBook with: 
+
+| Hardware Overview||
+| ------------- |-------------|
+|Model Name:|MacBook Pro|
+|Model Identifier:|MacBookPro14,3|
+|Processor Name:|	Intel Core i7|
+|Processor Speed:|2.9 GHz|
+|Number of Processors:|1|
+|Total Number of Cores:|4|
+|L2 Cache (per Core):|256 KB|
+|L3 Cache:|	8 MB|
+|Memory:|16 GB|
+
+| Storage||
+| ------------- |-------------|
+|Device Name:|APPLE SSD SM0512L|
+|Media Name:|AppleAPFSMedia|
+|Medium Type:|SSD|
+|Protocol:|PCI-Express|
+|Internal:|Yes|
+|Partition Map Type:|Unknown|
+
+  
 # Intallations
 
 Setup a conda environment
 
 ```
-conda create --name po-pandas
-source activate po-pandas
+conda create --name po_pandas
+source activate po_pandas
 ```
 
 Get jupyterlab up and running
@@ -38,8 +64,11 @@ pip install datatable
 
 ## Vaex
 
+Need vaex jupyter for plot_widget in vaex
+
 ```
 conda install vaex
+pip install vaex-jupyter
 ```
 
 ## Dask
@@ -72,7 +101,7 @@ The current version of pyarrow=0.13 does not work with Dask 2.5.0
 ```
 
 
-## Data Soucres
+# Data Soucres
 
 [New York Taxi Trips(2015) - 146 million rows - 23GB](https://drive.google.com/file/d/0B8gjQokMGa4nTXc0Z3QyYjZBMWc/view)
 
@@ -95,7 +124,7 @@ sed -i '' -e '$a\' iris.csv
 cat iris.csv iris_noheader.csv > iris_double.csv
 ```
 
-## Links
+# Links
 
 ### Video 
 
