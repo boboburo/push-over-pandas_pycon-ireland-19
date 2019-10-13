@@ -39,7 +39,7 @@ p.caption {
   }  
 </style>
 
-## motivation 
+## motivation
 
 <center>![pandas fail](presentation_images/upside_down_panda.jpg){#id .class width=50% height=50%}</center>
 
