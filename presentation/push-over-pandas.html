@@ -3,17 +3,78 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content="John Doe" />
-  <meta name="dcterms.date" content="2005-03-22" />
-  <title>Habits</title>
+  <title>Push Over Pandas</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="push-over-pandas_files/reveal.js-3.3.0.1/css/reveal.css"/>
 
 
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
-<link rel="stylesheet" href="push-over-pandas_files/reveal.js-3.3.0.1/css/theme/sky.css" id="theme">
+<link rel="stylesheet" href="push-over-pandas_files/reveal.js-3.3.0.1/css/theme/white.css" id="theme">
 
 
   <!-- some tweaks to reveal css -->
@@ -450,47 +511,528 @@ document.getElementsByTagName('head')[0].appendChild(style);
     <div class="slides">
 
 <section>
-    <h1 class="title">Habits</h1>
-    <h2 class="author">John Doe</h2>
-    <h3 class="date">March 22, 2005</h3>
+    <h1 class="title">Push Over Pandas</h1>
+  <h1 class="subtitle">PyCon Ireland</h1>
 </section>
 
-<section id="in-the-morning" class="slide level2">
-<h2>In the morning</h2>
+<section class="slide level2">
+
+<!---theme:white-->
+<style>
+div.lightsalmon pre { background-color:lightpink; }
+</style>
+<style>
+p.caption {
+  font-size: 0.25em;
+  text-align: left;
+}
+</style>
+<style type="text/css">
+  .reveal p {
+    text-align: left;
+  }
+  .reveal ul {
+    display: block;
+  }
+  .reveal ol {
+    display: block;
+  }  
+</style>
 </section>
-<section id="getting-up" class="slide level2">
-<h2>Getting up</h2>
-<ul>
-<li>Turn off alarm</li>
-<li>Get out of bed</li>
-</ul>
+<section id="motivation-a" class="slide level2">
+<h2>motivation a</h2>
+<center>
+<img data-src="presentation_images/upside_down_panda.jpg" alt="pandas fail" id="id" class="class" style="width:50.0%;height:50.0%" />
+</center>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">pd.read_csv(<span class="st">&quot;some_large_csv_file.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">pd.read_csv(<span class="st">&quot;some_csv_file_with_loads_of_strings.csv&quot;</span>)</a></code></pre></div>
+<div class="lightsalmon">
+<pre><code>Error Message</code></pre>
+</div>
 <aside class="notes">
-Test notes
+<ul>
+<li><p>Start my journey, DS, ML 10 years ago, excited, learnt about pandas, built some modes with scikit learn</p></li>
+<li><p>project with some text data, got everythign together and loaded it into pandas and bang pandas stopped working, I didn’t really know that pandas is not very good at handling strings or text data.</p></li>
+<li><p>then at different times I did some silly things like making a sparse matrix dense until learnt about sparse matrices.</p></li>
+<li><p>then came along some “big data tools” spark/scala</p></li>
+<li><p>there is a steep learning curve, tyring to spin up clusters, I alwayws end up messing something up - I have to debug something, end up writing some guide how to access something etc. really I only want to look at the data.</p></li>
+<li><p>never really been sufficent for me, I always end up sampling data and going back to pandas and then sometimes a rewrite to get it to work in spark.datagframe etc.</p></li>
+<li><p>more recently there have been a few tools that are taking advantages of changin landscape.</p></li>
+</ul>
 </aside>
 </section>
-<section id="breakfast" class="slide level2">
-<h2>Breakfast</h2>
+<section id="what-you-will-learn-here" class="slide level2">
+<h2>what you will learn here</h2>
 <ul>
-<li>Eat eggs</li>
-<li>Drink coffee</li>
-</ul>
-</section>
-<section id="in-the-evening" class="slide level2">
-<h2>In the evening</h2>
-</section>
-<section id="dinner" class="slide level2">
-<h2>Dinner</h2>
+<li>parquet &amp; arrow</li>
+<li>pandas
 <ul>
-<li>Eat spaghetti</li>
-<li>Drink wine</li>
+<li>modin (on ray)</li>
+</ul></li>
+<li>pydatatable</li>
+<li>vaex</li>
+<li>live(ish) demo</li>
 </ul>
-</section>
-<section id="going-to-sleep" class="slide level2">
-<h2>Going to sleep</h2>
+<p><em>who am I</em></p>
 <ul>
-<li>Get in bed</li>
-<li>Count sheep</li>
+<li>Brian Carter, Director of ML @ <a href="https://optum.com">Optum</a></li>
+<li><svg style="height:0.8em;top:.04em;position:relative;fill:steelblue;" viewBox="0 0 512 512">
+<path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/>
+</svg>
+<a href="mailto:brianthomascarter@gmail.com" class="email">brianthomascarter@gmail.com</a></li>
+<li><svg style="height:0.8em;top:.04em;position:relative;fill:steelblue;" viewBox="0 0 512 512">
+<path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/>
+</svg>
+ibriancarter</li>
+<li><svg style="height:0.8em;top:.04em;position:relative;fill:steelblue;" viewBox="0 0 496 512">
+<path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
+</svg>
+ibriancarter</li>
 </ul>
+<aside class="notes">
+<ul>
+<li>really focused from a consumer point of view, not a developer on any of these tools.</li>
+<li>my day to day job is analysing data, half the time I am talking to people trying to get that data and then tyring to understand it.</li>
+<li>could carry on, but I often don’t want the mental burden of switiching between tooling.</li>
+<li>often times moving from single machine technologies to big compute tech with clusters can be difficult.</li>
+</ul>
+</aside>
+</section>
+<section id="what-is-great-about-pandas" class="slide level2">
+<h2>what is great about pandas</h2>
+<center>
+<img data-src="presentation_images/modin2_credit.png" alt="pandas_apis" id="id" class="class" style="width:80.0%;height:70.0%" />
+</center>
+<ul>
+<li>API, interactivity, fast</li>
+<li>280</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>interactivity - the idea of Literate programming from Donald Knuth, which aim is to enable programmers to develop programs in the order demanded by logic and flow of their thoughts.</li>
+<li>data debugging .</li>
+<li>NB.1 Show how long it takes to load</li>
+</ul>
+</aside>
+<p class="caption">
+Source: <a href="https://towardsdatascience.com/get-faster-pandas-with-modin-even-on-your-laptops-b527a2eeda74">Get faster pandas with Modin, even on your laptops.</a>
+</p>
+</section>
+<section id="standardisation" class="slide level2">
+<h2>standardisation</h2>
+<center>
+<img data-src="presentation_images/arrow_1.png" alt="alt-text-1" id="id" class="class" style="width:50.0%;height:50.0%" /> <img data-src="presentation_images/arrow_2.png" alt="alt-text-2" id="id" class="class" style="width:50.0%;height:50.0%" />
+</center>
+<p class="caption">
+Source: <a href="https://arrow.apache.org/">Apache Arrow.</a>
+</p>
+<aside class="notes">
+<p>he Hadoop ecosystem has standardized on columnar formats—Apache Parquet for on-disk storage and Apache Arrow for in-memory. With this trend, deep integration with columnar formats is a key differentiator for big data technologies. Vertical integration from storage to execution greatly improves the latency of accessing data by pushing projections and filters to the storage layer, reducing time spent in IO reading from disk, as well as CPU time spent decompressing and decoding. Standards like Arrow and Parquet make this integration even more valuable as data can now cross system boundaries without incurring costly translation. Cross-system programming using languages such as Spark, Python, or SQL can becomes as fast as native internal performance.</p>
+<p>In this talk we’ll explain how Parquet is improving at the storage level, with metadata and statistics that will facilitate more optimizations in query engines in the future. We’ll detail how the new vectorized reader from Parquet to Arrow enables much faster reads by removing abstractions as well as several future improvements. We will also discuss how standard Arrow-based APIs pave the way to breaking the silos of big data. One example is Arrow-based universal function libraries that can be written in any language (Java, Scala, C++, Python, R, …) and will be usable in any big data system (Spark, Impala, Presto, Drill). Another is a standard data access API with projection and predicate push downs, which will greatly simplify data access optimizations across the board.</p>
+</aside>
+</section>
+<section id="apache-arrow-parquet" class="slide level2">
+<h2>Apache Arrow &amp; Parquet</h2>
+<center>
+<img data-src="presentation_images/arrow_parquet.jpg" alt="columar_storage" />
+</center>
+<ul>
+<li>parquet: On disk columar storage</li>
+<li>arrow: in memory columar format</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>flest this out.</li>
+</ul>
+</aside>
+<p class="caption">
+Source: <a href="https://www.slideshare.net/Hadoop_Summit/hadoop-performance-optimization-at-scale-lessons-learned-at-twitter/62-IN_SUMMARYKey_takeawaysProle">Hadoop Performance Optimization at Scale, Lessons Learned at Twitter </a>
+</p>
+</section>
+<section id="data.table" class="slide level2">
+<h2>data.table</h2>
+<center>
+<img data-src="presentation_images/data_table.jpg" alt="data table" id="id" class="class" style="width:50.0%;height:50.0%" />
+</center>
+<ul>
+<li>started in 2006 by Matt Dowle (currently at <a href="h20.ai">h2O</a>)</li>
+<li>focus on time series originally, can be used in genomics</li>
+<li>h20 ported this to python <a href="https://github.com/h2oai/datatable">datatable</a></li>
+<li>100GB on a single node machine</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>first foray into something different was data.table when it was created for R.</li>
+<li>explain what data.table is</li>
+<li>data.table is now available for python</li>
+<li>I do like it</li>
+<li>but I had to learn a whole new API</li>
+<li>R package originally</li>
+<li>syntax like matrix, rows in i, columns j, expression on columns can be done by groups.</li>
+<li>short syntax</li>
+<li>SQL Tables have no inherent order. If you want some form of ordering that you can rely upon, it’s up to you to provide enough deterministic expression(s) to any ORDER BY clause such that each row is uniquely identified and ordered.</li>
+<li></li>
+<li><p>Column-oriented data storage.</p></li>
+<li><p>Native-C implementation for all datatypes, including strings. Packages such as pandas and numpy already do that for numeric columns, but not for strings.</p></li>
+<li><p>Support for date-time and categorical types. Object type is also supported, but promotion into object discouraged.</p></li>
+<li><p>All types should support null values, with as little overhead as possible.</p></li>
+<li><p>Data should be stored on disk in the same format as in memory. This will allow us to memory-map data on disk and work on out-of-memory datasets transparently.</p></li>
+</ul>
+</aside>
+</section>
+<section id="modin" class="slide level2">
+<h2>modin</h2>
+<pre><code>import modin.pandas as pd</code></pre>
+<center>
+<img data-src="presentation_images/modin_architecture.png" alt="modin architecture" id="id" class="class" style="width:75.0%;height:60.0%" />
+</center>
+<aside class="notes">
+<ul>
+<li>expalin what, where, ray</li>
+<li>ray does not work on windows</li>
+<li>you often have to know how to partition data, setting it up is a pain.</li>
+<li>I don’t really want to know anything about how distributed computing works.</li>
+<li>batching</li>
+</ul>
+</aside>
+<p class="caption">
+Source: <a href="https://github.com/modin-project/modin">modin-project/modin </a>
+</p>
+</section>
+<section id="modin-on-ray" class="slide level2">
+<h2>modin on ray</h2>
+</section>
+<section id="vaex" class="slide level2">
+<h2>vaex</h2>
+<center>
+<img data-src="presentation_images/vaex_new_york.png" alt="vaex_new_york" id="id" class="class" style="width:40.0%;height:40.0%" />
+</center>
+<ul>
+<li>out of core data frames</li>
+<li>data + state</li>
+<li>1 billion rows/second</li>
+<li>10-1000x improvement string processing wrt to pandas</li>
+</ul>
+<p class="caption">
+Source: <a href="https://towardsdatascience.com/vaex-out-of-core-dataframes-for-python-and-fast-visualization-12c102db044a">Vaex: OUt of Core Dataframes for Python and Fast Visualisation</a>
+</p>
+<aside class="notes">
+<ul>
+<li>vaex was a visulation library now a dataframe library.</li>
+<li>laxy expressions / no memory copies</li>
+<li>columar storage with hdf5 &amp; arrow support</li>
+<li>very memory efficent uses memory mapping</li>
+<li>data+state just in time compile.</li>
+<li>has nice vizualisation support, plus some stuff for remote data frames and some ml tooling.</li>
+<li>kmeans pca &amp; xgboost with lightgbm library integrated.</li>
+<li>what is out of memory ?</li>
+</ul>
+</aside>
+</section>
+<section id="vaex-data-state" class="slide level2">
+<h2>Vaex: data + state</h2>
+<p><sub></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co"># pandas creates a temporary dataframe, with all the columns </span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co"># and sums on d</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">df[df.c <span class="op">&lt;</span> <span class="dv">0</span>].d.<span class="bu">sum</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co"># Vaex Expressions</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">df2 <span class="op">=</span> df[df.c<span class="op">&lt;</span><span class="dv">0</span>]</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#vaex state </span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">df2 <span class="op">=</span> {</a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">  <span class="st">&#39;data&#39;</span>: df,</a>
+<a class="sourceLine" id="cb5-7" data-line-number="7">  <span class="st">&#39;state&#39;</span>: {</a>
+<a class="sourceLine" id="cb5-8" data-line-number="8">    <span class="st">&#39;filter&#39;</span>: <span class="st">&#39;c &lt; 0&#39;</span>}</a>
+<a class="sourceLine" id="cb5-9" data-line-number="9">    }</a></code></pre></div>
+<aside class="notes">
+<ul>
+<li>filter , no copy made, reference the same data and remember the filter</li>
+<li>this state can then be saved and re-used, say for scoring data</li>
+</ul>
+</aside>
+</section>
+<section id="vaex-data-state-1" class="slide level2">
+<h2>Vaex: data + state</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co"># Vaex Virtual Column</span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">df2[<span class="st">&#39;z&#39;</span>] <span class="op">=</span> df.x <span class="op">+</span> df.y <span class="op">+</span> <span class="dv">10</span></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4">df2 <span class="op">=</span> {</a>
+<a class="sourceLine" id="cb6-5" data-line-number="5">  <span class="st">&#39;data&#39;</span>: df,</a>
+<a class="sourceLine" id="cb6-6" data-line-number="6">  <span class="st">&#39;state&#39;</span>: {</a>
+<a class="sourceLine" id="cb6-7" data-line-number="7">  <span class="st">&#39;filter: &#39;</span>y <span class="op">&lt;</span> <span class="dv">10</span><span class="st">&#39;,</span></a>
+<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="st">  &#39;</span>virtual_columns<span class="st">&#39; : {</span></a>
+<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="st">    &#39;</span>z<span class="st">&#39; &quot; &#39;</span>x <span class="op">=</span> y<span class="op">*</span><span class="dv">10</span><span class="st">&#39;</span></a>
+<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="st">  }</span></a>
+<a class="sourceLine" id="cb6-11" data-line-number="11"><span class="st">  }</span></a>
+<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="st">}</span></a></code></pre></div>
+<aside class="notes">
+<ul>
+<li>similar if you add a column it creates a virtual column in the state.</li>
+</ul>
+</aside>
+</section>
+<section id="work-to-do" class="slide level2">
+<h2>work to do</h2>
+<ul>
+<li>more libraries
+<ul>
+<li>SFrame</li>
+<li>Dask</li>
+<li>Spark</li>
+<li>cudaDF from Rapids</li>
+<li>xframe C++ library</li>
+</ul></li>
+<li><p>evaluation set</p></li>
+<li><p>refine benchmarking</p></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>comprehensive dataset to evaluatate</li>
+<li>is the mental overload, its hard moving between tooling - unless it really good</li>
+</ul>
+</aside>
+</section>
+<section id="evaulation-criteria" class="slide level2">
+<h2>evaulation criteria</h2>
+<table class="table table-striped" style="font-size: 16px; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+evaluate on:
+</th>
+<th style="text-align:left;">
+pandas
+</th>
+<th style="text-align:left;">
+pydatatable
+</th>
+<th style="text-align:left;">
+modin
+</th>
+<th style="text-align:left;">
+vaex
+</th>
+<th style="text-align:left;">
+dask
+</th>
+<th style="text-align:left;">
+Sframe Turicreate
+</th>
+<th style="text-align:left;">
+spark
+</th>
+<th style="text-align:left;">
+cuDF RAPIDS
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+status
+</td>
+<td style="text-align:left;">
+started
+</td>
+<td style="text-align:left;">
+started
+</td>
+<td style="text-align:left;">
+started
+</td>
+<td style="text-align:left;">
+started
+</td>
+<td style="text-align:left;">
+started
+</td>
+<td style="text-align:left;">
+not started
+</td>
+<td style="text-align:left;">
+not started
+</td>
+<td style="text-align:left;">
+not started
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+out of box use
+</td>
+<td style="text-align:left;">
+baseline
+</td>
+<td style="text-align:left;">
+easy
+</td>
+<td style="text-align:left;">
+easy
+</td>
+<td style="text-align:left;">
+easy
+</td>
+<td style="text-align:left;">
+hard, have to compute,save &amp; partition
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+syntax
+</td>
+<td style="text-align:left;">
+baseline
+</td>
+<td style="text-align:left;">
+not as simple/rich as R version.
+</td>
+<td style="text-align:left;">
+same as Pandas API
+</td>
+<td style="text-align:left;">
+not as rich as pandas, enough
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+interactivity/literate programming
+</td>
+<td style="text-align:left;">
+baseline
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+good
+</td>
+<td style="text-align:left;">
+good
+</td>
+<td style="text-align:left;">
+have to run .compute
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iteropertablity across languages
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+good
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+scaling
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+viz support
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ml support
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+</tbody>
+</table>
+<aside class = "notes">
+<p>Talking Points</p>
+<ul>
+<li>pandas: very flexible but loves making memory copies</li>
+<li>dask has the same issue, but distributes the memory copies</li>
+<li>modin seems to have a better solution</li>
+<li>datatable and vaex are very memory efficent</li>
+<li>xframe c++ dataframe library ?</li>
+<li>arrow standarisation - can talk across</li>
+<li>Single API, different engines.</li>
+</ul>
+<aside>
 </section>
     </div>
   </div>
@@ -506,7 +1048,7 @@ Test notes
         // Push each slide change to the browser history
         history: true,
         // Vertical centering of slides
-        center: true,
+        center: false,
         // Transition style
         transition: 'default', // none/fade/slide/convex/concave/zoom
         // Transition style for full page slide backgrounds
